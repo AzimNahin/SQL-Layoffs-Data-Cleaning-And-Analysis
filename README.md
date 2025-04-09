@@ -82,8 +82,7 @@ The cleaned dataset was explored using SQL queries to answer key questions:
 - **Monthly trends of layoffs over time**
 - **Layoffs by funding stage (Seed, Series A, Post-IPO, etc.)**
 - **Geographic distribution of layoffs by country**
-- **Average funding vs. layoffs — any correlation?**
-
+  
 ### 📈 Insights Uncovered:
 
 - The **tech** and **retail** industries saw the most frequent layoffs
