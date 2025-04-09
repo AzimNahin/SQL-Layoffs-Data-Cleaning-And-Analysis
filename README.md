@@ -3,7 +3,7 @@
 This project investigates global tech and startup layoffs from 2020 to 2023 using **SQL-based data cleaning and exploratory analysis**. The goal is to uncover patterns in layoffs by industry, funding stage, geography, and time period.
 
 The project was completed using:
-- **PostgreSQL** for data wrangling and querying
+- **MySQL** for data wrangling and querying
 - **.csv dataset** as the raw data source
 - **SQL scripts** for both cleaning and analysis
 
