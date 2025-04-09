@@ -44,27 +44,30 @@ The project was completed using:
 
 ## 🧹 Data Cleaning (in `Data_Cleaning_layoffs.sql`)
 
-The dataset required several cleaning steps before it could be analyzed:
+The raw `layoffs.csv` dataset was imported into MySQL and cleaned using structured SQL logic. Below are the precise data cleaning steps carried out:
 
-### ✅ Steps Performed:
+### 1. 🔄 Create Working Table
+- A duplicate table was created from the original to preserve the raw data.
 
-1. **Handled Null Values**:
-   - Removed rows where `company` or `country` was NULL
-   - Filtered out events with no `total_laid_off` or `date`
+### 2. ❌ Remove Duplicate Records
+- Duplicate rows were identified based on all major columns and removed to ensure each layoff event was unique.
 
-2. **Date Formatting**:
-   - Converted `date` column (text) into actual `DATE` datatype
+### 3. 🧽 Standardize Text Fields
+- Company names were trimmed to remove extra whitespace.
+- Industry labels were standardized (e.g., all variations of "Crypto" were unified under one label).
+- Country names were made consistent by resolving variations (e.g., "United States of America" was replaced with "United States").
 
-3. **Standardization**:
-   - Trimmed and lowercased industry names for consistency
-   - Removed inconsistencies in country naming
+### 4. 🗓️ Fix Date Format
+- The date field was converted from text to a proper date format to enable time-based analysis.
 
-4. **Filtering Unrealistic Values**:
-   - Removed rows with `total_laid_off = 0`
-   - Ignored companies with invalid or placeholder names
+### 5. 🛠 Fill Missing Values
+- Missing values in the `industry` column were filled using matching company names from other complete rows.
 
-5. **Created Derived Fields**:
-   - Extracted `year`, `month`, and `quarter` from `date`
+### 6. 🗑️ Remove Irrelevant Rows
+- Rows where both the total number and percentage of layoffs were missing were removed, as they provided no analytical value.
+
+### 7. ✅ Finalize Cleaned Table
+- A final cleaned version of the dataset was saved for analysis, with helper columns removed and structure standardized.
 
 ---
 
