@@ -55,7 +55,7 @@ The raw `layoffs.csv` dataset was imported into MySQL and cleaned using structur
 ### 3. 🧽 Standardize Text Fields
 - Company names were trimmed to remove extra whitespace.
 - Industry labels were standardized (e.g., all variations of "Crypto" were unified under one label).
-- Country names were made consistent by resolving variations (e.g., "United States of America" was replaced with "United States").
+- Country names were made consistent by resolving variations (e.g., "United States." was replaced with "United States").
 
 ### 4. 🗓️ Fix Date Format
 - The date field was converted from text to a proper date format to enable time-based analysis.
@@ -89,16 +89,40 @@ The cleaned dataset was explored using SQL queries to answer key questions:
 - The **tech** and **retail** industries saw the most frequent layoffs
 - **Post-IPO** and **Late-stage** companies were heavily represented
 - Layoffs surged in **mid to late 2022**, peaking around Q4
-- Most layoffs occurred in **United States**, followed by **India** and **Canada**
-- Companies with massive funding also contributed to high layoff numbers, indicating that funding does not guarantee stability
+- Most layof## 📊 Data Analysis (in `Data_Analysis_layoffs.sql`)
+
+The cleaned dataset was explored using SQL queries in MySQL to extract patterns and trends related to layoffs.
+
+### 📌 Key Analyses Performed:
+
+- Company with the **maximum and minimum** number of employees laid off
+- Company with the **highest and lowest** percentage of workforce laid off
+- **Total layoffs by industry**
+- **Layoffs by country**
+- **Layoffs by year**
+- **Layoffs by company funding stage**
+- **Rolling monthly layoff trend** across all years
+- **Top companies by total layoffs per year**
+- **Top 5 companies each year** (ranked yearly by layoffs)
+
+### 📈 Insights Uncovered:
+
+- **Tech**, **Retail**, and **Transportation** industries had the highest total layoffs
+- The majority of layoffs occurred in **2022**, with a noticeable peak in Q4
+- The **United States** had the highest number of layoffs, followed by **India**
+- **Post-IPO** and **Late Stage** companies experienced large-scale layoffs
+- Companies like **Meta**, **Amazon**, and **Byju's** frequently appeared in the yearly top 5
+- A continuous rise in layoffs was visible through the **rolling monthly total**
 
 ---
 
 ## 🛠 Tools Used
 
-- **PostgreSQL** – for SQL execution and logic
-- **pgAdmin / DBeaver** – for querying and result visualization
-- **Microsoft Excel / Google Sheets** (optional) – for any manual inspection of `.csv`
+- **MySQL (8.0)** – SQL execution and logic
+- **MySQL Workbench / DBeaver** – for querying and result visualization
+- **CSV (`layoffs.csv`)** – original raw dataset used for importing
+fs occurred in **United States**, followed by **India** and **Canada**
+- Companies with massive funding also contributed to high layoff numbers, indicating that funding does not guarantee stability
 
 ---
 
